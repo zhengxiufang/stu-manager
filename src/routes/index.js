@@ -3,6 +3,7 @@ import Index from "../pages/admin/dashboard/Index";
 import List from "../pages/admin/products/List";
 import Edit from "../pages/admin/products/Edit";
 import PageNotFound from "../pages/PageNotFound";
+import Notices from '../pages/admin/notices/Index';
 
 export const mainRoutes = [{
     path:'/login',
@@ -14,12 +15,25 @@ export const mainRoutes = [{
 
 export const adminRoutes = [{
     path:'/admin/dashboard',
-    component:Index
+    component:Index,
+    isShow:true,
+    title:"看板",
+    icon:"area-chart"
 },{
     path:'/admin/products',
     component:List,
-    exact:true
+    isShow:true,
+    exact:true,
+    title:"商品管理",
+    icon:"shop"
 },{
-    path:'/admin/products/edit/:id',
-    component:Edit
+    path:'/admin/products/edit/:id?',
+    component:Edit,
+    isShow:false
+
+},{
+    path:'/admin/notices',
+    component:Notices,
+    isShow:false
+
 }]
